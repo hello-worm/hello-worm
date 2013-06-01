@@ -1,0 +1,59 @@
+	#navbar{
+		float:right;
+		display:inline-block;
+	}
+	#navbar ul{
+		list-style-type:none;
+		display:block;
+		float:right;
+
+
+	}
+	#navbar ul li{
+		display:inline;
+		border-right:1px solid black;
+		padding:5px;
+	}
+	#logo{
+		float: left;
+		white-space: nowrap
+	}
+	#logo img{
+		width: 100px;
+		float: left;
+		margin-bottom: 10px
+
+	}
+	
+	#worm_background{
+		width: 600px;
+		height: 600px;
+		background-color: gray;
+		clear: left;
+		float:left;
+	}
+	#sidebar{
+		background-color:teal;
+		width: 25%;
+		height:600px;
+		float:right;
+	}
+	#graph{
+		
+	}
+
+
+
+
+/*Tablet*/
+
+
+
+@media screen and (max-width:1024px){
+	#logo img{ 
+		float:none;
+	}
+	#logo{
+		text-align:center;
+	}
+}
