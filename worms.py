@@ -5,7 +5,7 @@ from datetime import datetime
 def setupDB():
 	conn = sqlite3.connect('worms.db')
 	c = conn.cursor()
-	c.execute('''create table worms (time text, temp float, 
+	c.execute('''create table worms (id int, time text, temp float, 
 		humidity float, motion integer)''')
 	conn.commit()
 	conn.close()
@@ -31,9 +31,12 @@ def readArduino():
 def insertintoDB(data):
 	conn = sqlite3.connect('worms.db')
 	c = conn.cursor()
-
+	c.execute("select * from worms order by id desc limit 1")
+	data = c.fetchone()
+	index = int(data[0])
+	index += 1
 	[timestamp, temp, humidity, motion] = data
-	c.execute("insert into worms values (timestamp, temp, humidity, motion)")
+	c.execute("insert into worms values (index, timestamp, temp, humidity, motion)")
 	conn.commit()
 	comm.close()
 

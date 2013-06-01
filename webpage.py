@@ -7,17 +7,18 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     conn = sqlite3.connect('worms.db')
-    c = conn.cursor()
-    c.execute('''select * from worms''')
-    data = c.fetchall()
-    print data
+    c = conn.cursor() 
+    c.execute('''select * from worms order by id desc limit 1''')
+    data = c.fetchone()
+    [index, timestamp, temp, humidity, motion] = data
+
     conn.commit()
     conn.close()
 
     env = Environment(loader=PackageLoader('webpage', 'templates'))
-    # template = env.get_template('compost.html')
+    
 
-    return render_template('compost.html', hello="world")
+    return render_template('compost.html', temp=str(temp), humidity=str(humidity))
 
 if __name__ == '__main__':
     app.run()
