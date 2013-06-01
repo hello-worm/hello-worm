@@ -1,3 +1,8 @@
+	body{
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   		font-weight: 300;
+   	}
+
 	#navbar{
 		float:right;
 		display:inline-block;
@@ -26,7 +31,7 @@
 	}
 	
 	#worm_background{
-		width: 600px;
+		width: 65%;
 		height: 600px;
 		background-color: gray;
 		clear: left;
@@ -34,12 +39,25 @@
 	}
 	#sidebar{
 		background-color:teal;
-		width: 25%;
+		width: 33%;
 		height:600px;
 		float:right;
 	}
-	#graph{
+	#stats ul{
+		list-style-type: none;
+	}
+
+	#stats ul li{
+		border-bottom: 2px solid black;
 		
+
+	}
+	#graph{
+		width: 100%;
+		height: 50%;
+		background-color: purple;
+
+
 	}
 
 
