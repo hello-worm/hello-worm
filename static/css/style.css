@@ -179,7 +179,7 @@ nav ul li {
     width: 100%;
     padding: 60px 0; }
 
-  nav ul, nav:active ul, nav:hover ul {
+  nav ul, nav:active ul {
     display: none;
     position: absolute;
     padding: 0;
@@ -203,7 +203,7 @@ nav ul li {
     padding: 10px 0;
     margin: 0; }
 
-  nav:active ul, nav:hover ul {
+  nav:active ul {
     display: block; }
 
   #menu-icon {

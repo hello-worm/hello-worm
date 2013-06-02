@@ -40,11 +40,11 @@
 		
 	}
 
-	nav:active, nav:hover {
+	nav:active {
 
 	}
 	
-	nav ul, nav:active ul, nav:hover ul { 
+	nav ul, nav:active ul { 
 		display: none;
 		position: absolute;
 		padding: 0;
@@ -71,7 +71,7 @@
 
 	}
 
-	nav:active ul, nav:hover ul {
+	nav:active ul {
 		display: block;
 	}
 
