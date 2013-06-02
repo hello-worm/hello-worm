@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from jinja2 import Environment, PackageLoader
-import sqlite3, os, datetime
+import sqlite3, os, datetime, time
 
 app = Flask(__name__)
 
@@ -15,6 +15,23 @@ def get_data():
     conn.close()
 
     return data
+
+def get_all_temp_humid_data():
+    conn = sqlite3.connect('worms.db')
+    c = conn.cursor()
+    timestamp_list = []
+    temp_list = []
+    humidity_list = []
+    for row in c.execute('''select * from worms'''):
+        timestamp = row[1]
+        t = datetime.datetime.strptime(timestamp, "%Y-%m-%d_%H:%M:%S")
+        timestamp_list.append( time.mktime(t.timetuple()) )
+        temp_list.append( row[2] )
+        humidity_list.append( row[3] )
+    conn.commit()
+    conn.close()
+
+    return [timestamp_list, temp_list, humidity_list]
 
 
 @app.route('/')
@@ -40,9 +57,15 @@ def serve_alerts():
     return render_template('alerts.html')
 
 @app.route('/statistics/')
-def serve_alerts():
+def serve_statistics():
+    [timestamp_list, temp_list, humidity_list] = get_all_temp_humid_data()
+    datastr = ''
+    for time, temp, humid in zip(timestamp_list, temp_list, humidity_list):
+        datastr = datastr+ '{ x:'+ str(time)+', y: '+str(temp)+' },'
 
-    return render_template('statistics.html')
+    return render_template('statistics.html', datastr=datastr)
+    # when the mobilegraph.html or statistics.html file is ready, replace the above line with this one
+    #return render_template('statistics.html', datastr=datastr)    
 
 @app.route('/about/')
 def serve_about():

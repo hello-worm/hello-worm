@@ -1,7 +1,14 @@
 {% extends "index.html" %}
 {% block title %}Photos - {% endblock %}
 {% block content %}
-    <h1>Some rad photos of our worms</h1>
-    <p><img src={{imagefilename}} width='320' height='240'></p>
-    <p>Last updated {{datestr}}</p>
+	<div class="title2">
+	    <h1>Some rad photos of our worms</h1>
+	</div>
+
+
+	<div class="thumb">
+		<img src={{imagefilename}} width='320' height='240'>
+		<p>Last updated {{datestr}}</p>
+	</div>
+
 {% endblock %}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>
+			{% block title %}{% endblock %}Hello, worm
+		</title>
+		<link rel="stylesheet" href="/static/css/style.css" type = "text/css">
+	</head>
+	<body>
+		<div id="header" class="section">
+			<div id="logo">
+				<img id="logo-icon" src="/static/Willy_New.png"></img>
+				<h1>Hello, worm</h1>
+			</div>
+			<nav>
+				<a href="#" id="menu-icon"></a>
+
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/photos/">Photos</a></li>
+					<li><a href="/statistics/">Statistics</a></li>
+					<li><a href="/alerts/">Alerts</a></li>
+					<li><a href="/about/">About</a></li>
+					<li><a href="/settings/">Settings</a></li>
+				</ul>
+			</nav>
+		</div>
+		
+		
+		<div id="middle">			
+			{% block content %}
+			<!--Worm Image feed goes here-->
+			<div id="worm_background">
+				<div id="worm-container">
+					<p id="growing-days">24 growing days</p>
+					<img src="/static/Willy_New.png" alt="">
+					<p id="box-name">Class of 2013 Box</p>
+
+				</div>
+			</div>
+			
+			<div id="sidebar">
+			<!--statistics go here-->
+				<div class="stats">
+					<h3>Statistics</h3>
+						<!--stat 1 goes here-->
+						<div class="clearfix dash">
+							<p class="line" id="degree">{{temp}} F°</p>
+						</div>
+						<!--stat 2 goes here-->
+						<div class="clearfix dash">
+							<p id="humidity">{{humidity}} %</p>
+							<p class="line" id="caption-hum">humidity level</p>
+						</div>
+				</div>
+			<!--Graph goes here-->
+				<div id="graph">
+
+				</div>
+				<div id="statistic-caption">
+					<p>ideal conditions: 59°-77° and 90% and up</p>
+				</div>
+			</div>
+			{% endblock %}
+		</div>
+
+		<div id="footer">
+			<p><strong>© 2013 Got Worms</strong></p>
+			<p>An open-source micro-controller vermicompost monitoring project</p>
+		</div>
+	<script src="/static/js/jquery-2.0.2.min.js"></script>
+	<script src="/static/js/tap.js"></script>
+	<script src="/static/js/swipe.js"></script>
+	<script src="/static/js/touch.js"></script>
+	</body>
+	
+
+</html>

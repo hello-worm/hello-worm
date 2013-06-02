@@ -1,5 +1,24 @@
 {% extends "index.html" %}
 {% block title %}Settings - {% endblock %}
 {% block content %}
-    <h1>Worm settings. No hassle. Period.</h1>
+	<div class="title2">
+	    <h1>Settings</h1>
+	</div>
+	<div class="secondary">
+	    <h2>SMS</h2>
+	    <p><img class="settings" src="/static/checked.png"/>Send SMS when events occur</p>
+	    <p><img class="settings" src="/static/unchecked.png"/>Send SMS daily digests with high level alerts</p>
+
+	    <br>
+
+	    <h2>Glass</h2>
+	    <p><img class="settings" src="/static/checked.png"/>Send Glass updates when they occur</p>
+
+		<br>
+
+	    <h2>Emails</h2>
+	    <p><img class="settings" src="/static/unchecked.png"/>Send emails when they occur</p>
+	    <p><img class="settings" src="/static/checked.png"/>Send daily emails with high level alerts</p>
+
+	</div>
 {% endblock %}
