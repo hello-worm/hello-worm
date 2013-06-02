@@ -2,13 +2,31 @@
 {% block title %}Photos - {% endblock %}
 {% block content %}
 	<div class="title2">
-	    <h1>Some rad photos of our worms</h1>
+	    <h1>Recent Photos</h1>
+	    <p>A look inside the composter.</p>
 	</div>
+	
+	
+		<div>
+			<img class="thumb" src={{imagefilename}} width='320' height='240'>
+			<p>Last updated {{datestr}}</p>
+		</div>
 
-
-	<div class="thumb">
-		<img src={{imagefilename}} width='320' height='240'>
-		<p>Last updated {{datestr}}</p>
+	<div id="slider" class="swipe">
+		<div class="swipe-wrap">
+			<div>
+				<img class="thumb" src={{imagefilename}} width='320' height='240'>
+				<p>Last updated {{datestr}}</p>
+			</div>
+			<div>
+				<img src={{imagefilename}} width='320' height='240'>
+				<p>Last updated {{datestr}}</p>
+			</div>
+			<div>
+				<img src={{imagefilename}} width='320' height='240'>
+				<p>Last updated {{datestr}}</p>
+			</div>
+		</div>
 	</div>
 
 {% endblock %}

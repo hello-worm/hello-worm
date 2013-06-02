@@ -78,8 +78,6 @@ def serve_statistics():
     for time, temp, humid in zip(timestamp_list, temp_list, humidity_list):
         datastr = datastr+ '{ x:'+ str(time)+', y: '+str(temp)+' },'
 
-    #return render_template('statistics.html', datastr=datastr)
-    # when the mobilegraph.html or statistics.html file is ready, replace the above line with this one
     return render_template('statistics.html', datastr=datastr)    
 
 @app.route('/about/')

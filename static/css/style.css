@@ -55,7 +55,7 @@ nav ul li {
   margin-bottom: 10px; }
 
 #middle {
-  width: 100%;
+  width: 90%;
   clear: left;
   padding: 0 5%; }
 
@@ -100,25 +100,32 @@ nav ul li {
   float: left; }
 
 #statistic-caption p {
+  margin: 0;
   background-color: #5e5e5e;
   font-weight: 200;
-  padding-top: 11px;
-  padding-bottom: 13px;
+  padding: 3px;
   text-align: center;
   font-size: 13px; }
+#statistic-caption img {
+  max-width: 100%;
+  margin: 0; }
 
 .stats {
   text-align: center; }
-
-.stats h3 {
-  background-color: #5e5e5e;
-  font-weight: 200;
-  margin-top: -1px;
-  padding-top: 11px;
-  padding-bottom: 13px; }
+  .stats h3 {
+    background-color: #5e5e5e;
+    font-weight: 200;
+    margin-top: -1px;
+    padding-top: 11px;
+    padding-bottom: 13px; }
+  .stats a {
+    text-decoration: none;
+    font-color: white;
+    text-underline-position: none; }
 
 .stats .line {
-  border-bottom: 10px solid #00ffa8; }
+  border-bottom: 10px solid #00ffa8;
+  margin-bottom: 0; }
 
 #degree {
   font-size: 66px;
@@ -136,6 +143,8 @@ nav ul li {
   font-size: 32px;
   margin-top: -71px;
   padding-bottom: 22px; }
+  #caption-hum .line {
+    margin: 0; }
 
 #graph {
   width: 100%;
@@ -149,6 +158,20 @@ nav ul li {
   color: white;
   float: left;
   display: inline-block; }
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative; }
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative; }
+
+.swipe-wrap > div {
+  float: left;
+  width: 100%;
+  position: relative; }
 
 /*Tablet*/
 @media screen and (max-width: 1024px) and (min-width: 641px) {
@@ -177,6 +200,8 @@ nav ul li {
   #middle {
     width: 100%;
     padding: 60px 0; }
+    #middle p {
+      padding: 0 5%; }
 
   nav ul, nav:active ul {
     display: none;
@@ -256,9 +281,12 @@ nav ul li {
   #graph {
     display: none; }
 
+  #statistic-caption img {
+    display: none; }
   #statistic-caption p {
     font-size: 0.8em;
-    border-bottom: 10px solid #00ffa8; }
+    border-bottom: 10px solid #00ffa8;
+    padding: 1em; }
 
   #footer {
     clear: both;
@@ -271,7 +299,8 @@ nav ul li {
 
 .title2 {
   width: 100%;
-  background-color: #5e5e5e; }
+  background-color: #5e5e5e;
+  padding: 1%; }
   .title2 h1 {
     padding: 0 5%;
     margin: 0; }
