@@ -22,7 +22,7 @@
 				z-index:-1;
 			}
 			#money_zone{
-				
+
 
 			}
 			#wrapper{
@@ -31,7 +31,7 @@
 			}
 			.rickshaw_graph .x_tick {
 				position: absolute;
-				top: 0;
+				/*top: 400;*/
 				bottom: 0;
 				width: 0;
 				border-left: 1px dotted rgba(0,0,0,.2);
@@ -60,10 +60,10 @@
 
 var graph = new Rickshaw.Graph( {
         element: document.querySelector("#graph"),
-        width: 580,
-        height: 250,
+        width: 720/2,
+        height: 600/2,
         series: [ {
-                color: 'steelblue',
+                color: '#00d2ff',
                 data: data
         } ]
 } );

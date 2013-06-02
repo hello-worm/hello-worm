@@ -4,7 +4,8 @@ import time
 from datetime import datetime
 from subprocess import Popen
 SERIAL_PORT = '621'
-TEMP_THRESH = 90.
+TEMP_THRESH_HI = 90.
+TEMP_THRESH_LO = 70.
 HUMIDITY_THRESH = 80.
 
 def setupDB():
@@ -13,7 +14,7 @@ def setupDB():
     c.execute('''create table worms (id int, time text, temp float, 
         humidity float, motion integer, image text)''')
     c.execute('''create table alerts (id int, time text, alerttext text,
-        active integer''')
+        active integer, explain text''')
     conn.commit()
     conn.close()
 
@@ -76,18 +77,24 @@ def checkforAlerts(data):
         index = 1
 
     active = 1
-    if temp > TEMP_THRESH:
+    if temp > TEMP_THRESH_HI or temp < TEMP_THRESH_LO:
         alerttext = "Check temperature"
-        sendalert(alerttext)
-        c.execute("insert into alerts values (?,?,?,?)",
-            (index, timestamp, alerttext, active))
+        if temp > TEMP_THRESH_HI:
+            explaintext = "Temperature rose to %dF" % temp
+        else:
+            explaintext = "Temperature dropped to %dF" % temp
+        #sendalert(alerttext)
+        c.execute("insert into alerts values (?,?,?,?,?)",
+            (index, timestamp, alerttext, active, explaintext))
         conn.commit()
         conn.close() 
     if humidity < HUMIDITY_THRESH:
         alerttext = "Check humidity"
-        sendalert(alerttext)
-        c.execute("insert into alerts values (?,?,?,?)",
-            (index, timestamp, alerttext, active))
+        #alerttext = ""
+        explaintext = "Humidity dropped to %d%%" % humidity
+        #sendalert(alerttext)
+        c.execute("insert into alerts values (?,?,?,?,?)",
+            (index, timestamp, alerttext, active, explaintext))
         conn.commit()
         conn.close()          
 
