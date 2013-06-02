@@ -93,6 +93,7 @@ def checkforAlerts(data):
 
 def sendalert(alerttext):
     Popen(["./send_sms.sh", alerttext])
+    Popen(["./send_to_glass.sh", alerttext])
     pass
 
 
