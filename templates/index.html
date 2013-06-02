@@ -26,15 +26,19 @@
 		</div>
 		
 		<div id="middle">
-			{% block content %}
+			
 			<!--Worm Image feed goes here-->
+			
 			<div id="worm_background">
 				<div id="worm-container">
+					{% block content %}
 					<p id="growing-days">24 growing days</p>
 					<img src="/static/Willy_New.png" alt="">
 					<p id="box-name">Class of 2013 Box</p>
+
 				</div>
 			</div>
+			
 			<div id="sidebar">
 			<!--statistics go here-->
 				<div id="stats">
@@ -52,10 +56,10 @@
 				<div id="statistic-caption">
 					<p>ideal conditions: 59°-77° and 90% and up</p>
 				</div>
+			{% endblock %}
 			</div>
-		{% endblock %}
 		</div>
-		
+
 		<div style="clear:both"></div>
 		<div id="footer">
 			<p>© 2013 Got Worms</p>
