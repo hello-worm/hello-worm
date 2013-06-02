@@ -33,6 +33,21 @@ def get_all_temp_humid_data():
 
     return [timestamp_list, temp_list, humidity_list]
 
+def get_alerts():
+    conn = sqlite3.connect('worms.db')
+    c = conn.cursor()
+    alerts_list = []
+    for row in c.execute('''select * from alerts order by id limit 5'''):
+        color = row[3]
+        if color == 0: color = (0,215, 137)
+        if color == 1: color = (255, 84, 0)
+        if color == 2: color = (94, 94, 94)
+        alerts_list.append( [row[1], row[2], color, row[4]] )
+    conn.commit()
+    conn.close()
+
+    return str(alerts_list)    
+
 
 @app.route('/')
 def serve_home():
@@ -63,9 +78,9 @@ def serve_statistics():
     for time, temp, humid in zip(timestamp_list, temp_list, humidity_list):
         datastr = datastr+ '{ x:'+ str(time)+', y: '+str(temp)+' },'
 
-    return render_template('statistics.html', datastr=datastr)
+    #return render_template('statistics.html', datastr=datastr)
     # when the mobilegraph.html or statistics.html file is ready, replace the above line with this one
-    #return render_template('statistics.html', datastr=datastr)    
+    return render_template('statistics.html', datastr=datastr)    
 
 @app.route('/about/')
 def serve_about():
