@@ -188,6 +188,18 @@ body{
 /*Tablet*/
 
 @media screen and (max-width:640px) {
+	#top {
+		position:fixed;
+		top:0;
+		left:0;
+		background-color: black;
+	}
+	#logo {
+		width:100%;
+	}
+	#logo-icon {
+		display:none;
+	}
 	#middle { 
 		width: 25%;
 	}
