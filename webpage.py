@@ -16,19 +16,18 @@ def get_data():
 
     return data
 
+
 @app.route('/')
 def serve_home():
     
     [index, timestamp, temp, humidity, motion] = get_data();
-
-    env = Environment(loader=PackageLoader('webpage', 'templates'))
     
-    return render_template('compost.html', temp=str(temp), humidity=str(humidity))
+    return render_template('index.html', temp=str(temp), humidity=str(humidity))
 
 @app.route('/photos/')
 def serve_photos():
 
-    return 'photos'
+    return render_template('photos.html')
 
 @app.route('/alerts/')
 def serve_alerts():
