@@ -1,4 +1,5 @@
-$('#menu-icon').on('tap', mToggle);
+var el = document.getElementById('menu-icon'),
+    myTap = new Tap(el);
 
 function mToggle() {
 	var mState = $('nav ul').css('display');
@@ -15,3 +16,5 @@ function mToggle() {
 		})
 	}
 }
+
+el.addEventListener('tap', mToggle, false);
