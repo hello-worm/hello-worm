@@ -4,6 +4,8 @@ import time
 from datetime import datetime
 
 SERIAL_PORT = '621'
+TEMP_THRESH = 90.
+HUMIDITY_THRESH = 80.
 
 def setupDB():
     conn = sqlite3.connect('worms.db')
@@ -11,7 +13,7 @@ def setupDB():
     c.execute('''create table worms (id int, time text, temp float, 
         humidity float, motion integer, image text)''')
     c.execute('''create table alerts (id int, time text, alerttext text,
-        active integer'''))
+        active integer''')
     conn.commit()
     conn.close()
 
@@ -73,24 +75,26 @@ def checkforAlerts(data):
     except Exception, e:
         index = 1
 
+    active = 1
     if temp > TEMP_THRESH:
         alerttext = "Check temperature"
         sendalert(alerttext)
         c.execute("insert into alerts values (?,?,?,?)",
-            (index, time, alerttext, active))
+            (index, timestamp, alerttext, active))
         conn.commit()
         conn.close() 
     if humidity < HUMIDITY_THRESH:
         alerttext = "Check humidity"
         sendalert(alerttext)
         c.execute("insert into alerts values (?,?,?,?)",
-            (index, time, alerttext, active))
+            (index, timestamp, alerttext, active))
         conn.commit()
         conn.close()          
 
-
-def sentalert(alerttext):
+def sendalert(alerttext):
     pass
+
+
 
 if __name__ == "__main__":
     while(1):
