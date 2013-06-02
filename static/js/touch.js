@@ -27,21 +27,9 @@ var tempnum = document.getElementById('tempnum'),
 function tempToggle() {
 	console.log($('#hum-img').css('display'));
 	var tempState = $('#hum-img').css('display');
-	if (tempState == "none") {
-		$('#hum-img').css( {
-			display:'block',
-		});
-		$('#worm_background').css( {
-			display:'none',
-		});
-		$('#worm-container').css( {
-			display:'none',
-		});
-		$('#temp-img').css( {
-			display:'none',
-		});
-	}
-	else {
+	
+	if (tempState !== "none") {
+		
 		$('#hum-img').css({
 			display:'none',
 		});
@@ -54,19 +42,35 @@ function tempToggle() {
 		$('#temp-img').css( {
 			display:'none',
 		});
+	}
+	
+	else {
+
+		$('#hum-img').css( {
+			display:'block',
+		});
+		$('#worm_background').css( {
+			display:'none',
+		});
+		$('#worm-container').css( {
+			display:'none',
+		});
+		$('#temp-img').css( {
+			display:'none',
+		});
 
 	}
 }
 
-tempnum.addEventListener('tap', tempToggle, false);
+// tempnum.addEventListener('tap', tempToggle, false);
 
 
 // humidity dashboard toggle
 var humnum = document.getElementById('humnum'),
     hum = new Tap(humnum);
 
-function tempHum() {
+function humToggle() {
 	console.log('toggle-hum');
 }
 
-humnum.addEventListener('tap', tempHum, false);
+// humnum.addEventListener('tap', humToggle, false);

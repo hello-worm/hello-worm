@@ -282,10 +282,12 @@ nav ul li {
     display: none; }
 
   #hum-img {
-    width: 100%; }
+    width: 100%;
+    display: none; }
 
   #temp-img {
-    width: 100%; }
+    width: 100%;
+    display: none; }
 
   #statistic-caption img {
     display: none; }
