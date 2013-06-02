@@ -74,9 +74,10 @@ def serve_alerts():
 @app.route('/statistics/')
 def serve_statistics():
     [timestamp_list, temp_list, humidity_list] = get_all_temp_humid_data()
-    datastr = ''
+    datastr = '['
     for time, temp, humid in zip(timestamp_list, temp_list, humidity_list):
         datastr = datastr+ '{ x:'+ str(time)+', y: '+str(temp)+' },'
+    datastr = datastr + ']'
 
     return render_template('statistics.html', datastr=datastr)    
 
