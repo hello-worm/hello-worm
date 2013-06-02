@@ -112,13 +112,16 @@ nav ul li {
 
 .stats {
   text-align: center; }
-
-.stats h3 {
-  background-color: #5e5e5e;
-  font-weight: 200;
-  margin-top: -1px;
-  padding-top: 11px;
-  padding-bottom: 13px; }
+  .stats h3 {
+    background-color: #5e5e5e;
+    font-weight: 200;
+    margin-top: -1px;
+    padding-top: 11px;
+    padding-bottom: 13px; }
+  .stats a {
+    text-decoration: none;
+    font-color: white;
+    text-underline-position: none; }
 
 .stats .line {
   border-bottom: 10px solid #00ffa8;
