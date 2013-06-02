@@ -3,7 +3,7 @@ import serial
 import time
 from datetime import datetime
 from subprocess import Popen
-SERIAL_PORT = '621'
+SERIAL_PORT = 'fa131'
 TEMP_THRESH_HI = 90.
 TEMP_THRESH_LO = 70.
 HUMIDITY_THRESH = 80.
@@ -14,7 +14,7 @@ def setupDB():
     c.execute('''create table worms (id int, time text, temp float, 
         humidity float, motion integer, image text)''')
     c.execute('''create table alerts (id int, time text, alerttext text,
-        active integer, explain text''')
+        active integer, explain text)''')
     conn.commit()
     conn.close()
 
@@ -33,7 +33,6 @@ def readArduino():
             pass
         if attempts >= 20:
             raise Exception("Cannot find Arduino. Is it connected?")
-    print line
     print "saving last line to DB"
     # first get the current time stamp
     curtime = datetime.now()
@@ -76,27 +75,28 @@ def checkforAlerts(data):
     except Exception, e:
         index = 1
 
-    active = 1
     if temp > TEMP_THRESH_HI or temp < TEMP_THRESH_LO:
         alerttext = "Check temperature"
+        color = 1
         if temp > TEMP_THRESH_HI:
             explaintext = "Temperature rose to %dF" % temp
         else:
             explaintext = "Temperature dropped to %dF" % temp
-        #sendalert(alerttext)
+        sendalert(alerttext)
         c.execute("insert into alerts values (?,?,?,?,?)",
-            (index, timestamp, alerttext, active, explaintext))
-        conn.commit()
-        conn.close() 
+            (index, timestamp, alerttext, color, explaintext))
+        index += 1
     if humidity < HUMIDITY_THRESH:
         alerttext = "Check humidity"
+        color = 2
         #alerttext = ""
         explaintext = "Humidity dropped to %d%%" % humidity
-        #sendalert(alerttext)
+        sendalert(alerttext)
         c.execute("insert into alerts values (?,?,?,?,?)",
-            (index, timestamp, alerttext, active, explaintext))
-        conn.commit()
-        conn.close()          
+            (index, timestamp, alerttext, color, explaintext))
+
+    conn.commit()
+    conn.close()          
 
 def sendalert(alerttext):
     Popen(["./send_sms.sh", alerttext])
@@ -109,4 +109,4 @@ if __name__ == "__main__":
     while(1):
         data = readArduino()
         insertintoDB(data)
-        time.sleep(10)
+        time.sleep(2)
