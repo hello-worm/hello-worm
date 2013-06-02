@@ -121,8 +121,6 @@ body{
 
 #stats p.line{
 	border-bottom: 10px solid #00ffa8;
-	
-
 }
 
 #degree {
@@ -151,7 +149,7 @@ body{
 }
 
 #footer a{
-		color: white;
+	color: white;
 	text-decoration: none;
 	font-size: 14px;
 	}
@@ -173,15 +171,24 @@ body{
 }
 
 
+
 /*Tablet*/
 
-
-
-@media screen and (max-width:1024px){
+@media screen and (max-width:1024px) and (min-width: 641px) {
 	#logo img{ 
 		float:none;
 	}
 	#logo{
 		text-align:center;
+	}
+}
+
+
+/*smartphone*/
+/*Tablet*/
+
+@media screen and (max-width:640px) {
+	#middle { 
+		width: 25%;
 	}
 }
