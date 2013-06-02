@@ -16,5 +16,5 @@ void loop(){
   Serial.print(",");
   Serial.print(humidity);
   Serial.print("\n");
-  delay(1000);
+  delay(500);
 }
