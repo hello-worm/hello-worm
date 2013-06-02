@@ -32,6 +32,7 @@ nav ul{
 	display:block;
 	float:right;
 	margin-top: 62px;
+	// margin-top: 0;
 
 }
 nav ul li{
@@ -48,6 +49,16 @@ nav ul li{
 	background: #000 url(/static/menu.png) center;
 }
 
+
+#hum-img {
+	width:100%;
+	display:none;
+}
+
+#temp-img {
+	width:100%;
+	display:none;
+}
 
 #logo{
 	float: left;

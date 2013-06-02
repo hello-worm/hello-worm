@@ -18,28 +18,7 @@
 <div class="secondary">
     <p>Welcome to 'Hello, worm!'.</p>
 </div>
-<div class="worm_background">
-	<div class="worm_container">
-		<div id="graph" style=" display:static">
-		</div>
-	</div>
-</div>
-<script src="/static/graph/vendor/d3.min.js"></script>
-	<script src="/static/graph/vendor/d3.layout.min.js"></script>
-	<script src="/static/graph/rickshaw.min.js"></script>
-	<script>
-		var data = {{datastr}};
 
-		var graph = new Rickshaw.Graph( {
-	        element: document.querySelector("#graph"),
-	        width: 720/2,
-	        height: 600/2,
-	        series: [ {
-                color: '#00d2ff',
-                data: data
-	        } ]
-		} );
-
-		graph.render();
-	</script>
+    <img src="/static/images/Humidity_solo_1000px.png">
+    <img src="/static/images/Temp_solo_1000px.png">
 {% endblock %}
