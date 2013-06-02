@@ -12,6 +12,10 @@
 /*Smartphone*/
 @media screen and (max-width:1280px) 
 and (-webkit-min-device-pixel-ratio: 1){
+
+	html {
+		font-size: 32px;
+	}
 	#header {
 		position:fixed;
 		top:0;
