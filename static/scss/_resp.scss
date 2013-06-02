@@ -1,16 +1,17 @@
-/*Tablet*/
-@media screen and (max-width:1024px) and (min-width: 641px) {
-	#logo img{ 
-		float:none;
-	}
-	#logo{
-		text-align:center;
-	}
-}
+// /*Tablet*/
+// @media screen and (max-width:1024px) and (min-width: 641px) {
+// 	#logo img{ 
+// 		float:none;
+// 	}
+// 	#logo{
+// 		text-align:center;
+// 	}
+// }
 
 
 /*Smartphone*/
-@media screen and (max-width:640px) {
+@media screen and (max-width:640px) 
+and (-webkit-min-device-pixel-ratio: 2){
 	#header {
 		position:fixed;
 		top:0;

@@ -66,10 +66,10 @@ def serve_photos():
     return render_template('photos.html', 
         imagefilename=latest_file.lstrip('.'), datestr=datestr)
 
-@app.route('/alerts/')
-def serve_alerts():
-    alerts_list = get_alerts()
-    return render_template('alerts.html', alerts_list=alerts_list)
+# @app.route('/alerts/')
+# def serve_alerts():
+#     alerts_list = get_alerts()
+#     return render_template('alerts.html', alerts_list=alerts_list)
 
 @app.route('/statistics/')
 def serve_statistics():
