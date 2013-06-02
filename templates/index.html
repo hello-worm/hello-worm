@@ -45,10 +45,14 @@
 				<div class="stats">
 					<h3>Statistics</h3>
 						<!--stat 1 goes here-->
-						<p class="line" id="degree">{{temp}} F°</p>
+						<div class="clearfix dash">
+							<p class="line" id="degree">{{temp}} F°</p>
+						</div>
 						<!--stat 2 goes here-->
-						<p id="humidity">{{humidity}} %</p>
-						<p class="line" id="caption-hum">humidity level</p>
+						<div class="clearfix dash">
+							<p id="humidity">{{humidity}} %</p>
+							<p class="line" id="caption-hum">humidity level</p>
+						</div>
 				</div>
 			<!--Graph goes here-->
 				<div id="graph">
