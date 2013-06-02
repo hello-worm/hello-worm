@@ -89,11 +89,11 @@ nav ul li {
 
 #worm_background p#growing-days {
   text-align: center;
-  font-size: 22px; }
+  font-size: 1.6em; }
 
 #worm_background p#box-name {
   text-align: center;
-  font-size: 28px; }
+  font-size: 2em; }
 
 #sidebar {
   width: 20%;
@@ -174,7 +174,10 @@ nav ul li {
   position: relative; }
 
 /*Smartphone*/
-@media screen and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (max-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+  html {
+    font-size: 32px; }
+
   #header {
     position: fixed;
     top: 0;
@@ -192,7 +195,7 @@ nav ul li {
 
   #middle {
     width: 100%;
-    padding: 60px 0; }
+    padding: 120px 0; }
     #middle p {
       padding: 0 5%; }
 
@@ -203,7 +206,7 @@ nav ul li {
     background: #000;
     border: 1px solid #444;
     right: 0;
-    top: 0;
+    top: 40px;
     width: 100%; }
 
   nav ul li {
@@ -224,11 +227,13 @@ nav ul li {
     display: block; }
 
   #menu-icon {
+    width: 80px;
+    height: 80px;
     float: right;
     display: inline-block;
     position: fixed;
-    top: 10px;
-    right: 10px; }
+    top: 20px;
+    right: 20px; }
 
   #worm-container {
     width: 100%; }
@@ -285,13 +290,14 @@ nav ul li {
   #statistic-caption img {
     display: none; }
   #statistic-caption p {
-    font-size: 0.8em;
+    font-size: 1em;
     border-bottom: 10px solid #00ffa8;
     padding: 1em; }
 
   #footer {
     clear: both;
-    border-top: 2px solid #444; } }
+    border-top: 2px solid #444;
+    font-size: 1em; } }
 .secondary {
   color: white;
   padding: 0 5%;
