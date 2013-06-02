@@ -79,11 +79,14 @@
 			<script>
 
 			var data = [ { x: 0, y: 40 }, { x: 1, y: 49 }, { x: 2, y: 17 }, { x: 3, y: 42 } ];
+			
+			var graphWidth=window.innerWidth/4.5; //sidebar width is 25%, so we'll expand here. 
+			var graphHeight=window.innerHeight/4;
 
 			var graph = new Rickshaw.Graph( {
 				element: document.querySelector("#graph"),
-				width: 580,
-				height: 250,
+				width: graphWidth,
+				height: graphHeight,
 				series: [ {
 					color: 'steelblue',
 					data: data
