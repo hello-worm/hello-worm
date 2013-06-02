@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<title>
-			{% block title %}{% endblock %} - Got Worms
+			{% block title %}{% endblock %}Hello, worm
 		</title>
 		<link rel="stylesheet" href="/static/style.css" type = "text/css">
 	</head>
@@ -11,13 +11,13 @@
 		<div id="top" class="section">
 			<div id="logo">
 				<img src="/static/Willy_New.png"></img>
-				<h1>Got Worms</h1>
+				<h1>Hello, worm</h1>
 			</div>
 			<div id="navbar">
 				<ul>
 					<li> <a href="/">Home</a></li>
 					<li> <a href="/photos/">Photos</a></li>
-					<li> <a href="statistics">Statistics</a></li>
+					<li> <a href="/statistics/">Statistics</a></li>
 					<li> <a href="/alerts/">Alerts</a></li>
 					<li> <a href="/about/">About</a></li>
 					<li> <a href="/settings/">Settings</a></li>
@@ -26,12 +26,11 @@
 		</div>
 		
 		<div id="middle">
+		{% block content %}
 			
 			<!--Worm Image feed goes here-->
-			
 			<div id="worm_background">
 				<div id="worm-container">
-					{% block content %}
 					<p id="growing-days">24 growing days</p>
 					<img src="/static/Willy_New.png" alt="">
 					<p id="box-name">Class of 2013 Box</p>
@@ -57,8 +56,8 @@
 				<div id="statistic-caption">
 					<p>ideal conditions: 59°-77° and 90% and up</p>
 				</div>
-			{% endblock %}
 			</div>
+		{% endblock %}
 		</div>
 
 		<div style="clear:both"></div>
