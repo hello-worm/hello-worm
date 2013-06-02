@@ -1,11 +1,13 @@
 body{
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 		font-weight: 300;
-		background-color:black;
+		background-color:#000;
 		color:white;
 		padding-left: 65px;
 	padding-right: 65px;
 	}
+
+
 
 nav a{
 	color: white;
@@ -30,6 +32,16 @@ nav ul li{
 	border-right:1px solid black;
 	padding:5px;
 }
+
+#menu-icon {
+	margin: 0;
+	display: hidden;
+	width: 40px;
+	height: 40px;
+	background: #000 url(/static/menu.png) center;
+
+}
+
 
 #logo{
 	float: left;
@@ -146,7 +158,7 @@ nav ul li{
 #graph{
 	width: 100%;
 	height: 25%;
-
+	background-color:gray;
 }
 
 #footer a{
@@ -190,12 +202,21 @@ nav ul li{
 		position:fixed;
 		top:0;
 		left:0;
-		background-color: black;
+		background-color: #000;
 		width:100%;
+		border-bottom: 2px solid #444;
 	}
+
+	#header h1 {
+		float: left;
+		font-size:1.5em;
+		margin-left: 1em;
+	}
+
 	#logo {
-		width:100%;
+
 	}
+
 	#logo-icon {
 		display:none;
 	}
@@ -204,24 +225,30 @@ nav ul li{
 		
 	}
 
-	
-	
-	nav ul, nav:active ul { 
+	nav:active, nav:hover {
 
+	}
+	
+	nav ul, nav:active ul, nav:hover ul { 
 		display: none;
 		position: absolute;
-		padding: 20px;
-		background: #fff;
-		border: 5px solid #444;
-		right: 20px;
-		top: 60px;
-		width: 50%;
-		border-radius: 4px 0 4px 4px;
-
+		padding: 0;
+		background: #000;
+		border: 1px solid #444;
+		right: 0;
+		top: 0;
+		width: 100%;
+	}
+	nav ul li {
+		display: inline-block;
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+		border: 1px solid #444;
 	}
 
 	nav li {
-
 		text-align: center;
 		width: 100%;
 		padding: 10px 0;
@@ -229,10 +256,28 @@ nav ul li{
 
 	}
 
-	nav:hover ul {
+	nav:active ul, nav:hover ul {
 
 		display: block;
 
+	}
+
+	#menu-icon {
+		float:right;
+		display:inline-block;
+		position:absolute;
+		top: 10px;
+		right: 10px;
+	}
+
+	#worm-container {
+		width:100%;
+	}
+
+	#sidebar {
+	float:none;
+	}
+	#stats {
 	}
 
 }
