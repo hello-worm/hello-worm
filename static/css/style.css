@@ -150,6 +150,20 @@ nav ul li {
   float: left;
   display: inline-block; }
 
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative; }
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative; }
+
+.swipe-wrap > div {
+  float: left;
+  width: 100%;
+  position: relative; }
+
 /*Tablet*/
 @media screen and (max-width: 1024px) and (min-width: 641px) {
   #logo img {
@@ -177,6 +191,8 @@ nav ul li {
   #middle {
     width: 100%;
     padding: 60px 0; }
+    #middle p {
+      padding: 0 5%; }
 
   nav ul, nav:active ul {
     display: none;
