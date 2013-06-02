@@ -4,12 +4,10 @@ import sqlite3
 
 app = Flask(__name__)
 
-def get_data():
-    conn = sqlite3.connect('worms.db')
-    c = conn.cursor() 
+
     c.execute('''select * from worms order by id desc limit 1''')
     data = c.fetchone()
-    [index, timestamp, temp, humidity, motion] = data
+    [index, timestamp, temp, humidity, motion, imagestr] = data
 
     conn.commit()
     conn.close()
@@ -20,7 +18,8 @@ def get_data():
 @app.route('/')
 def serve_home():
     
-    [index, timestamp, temp, humidity, motion] = get_data();
+
+    [index, timestamp, temp, humidity, motion, imagestr] = get_data();
     
     return render_template('index.html', temp=str(temp), humidity=str(humidity))
 
