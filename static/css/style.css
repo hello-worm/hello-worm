@@ -1,301 +1,240 @@
-body{
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-	font-weight: 300;
-	background-color:#000;
-	color:white;
-	padding-left: 65px;
-	padding-right: 65px;
-	}
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  background-color: #000;
+  color: white; }
 
-
-
-nav a{
-	color: white;
-	text-decoration: none;
-	font-size: 21px;
-	margin-left: 30px;
-}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 21px;
+  margin-left: 30px; }
 
 nav {
-	float:right;
-	display:inline-block;
-}
-nav ul{
-	list-style-type:none;
-	display:block;
-	float:right;
-	margin-top: 62px;
+  float: right;
+  display: inline-block; }
 
-}
-nav ul li{
-	display:inline;
-	border-right:1px solid black;
-	padding:5px;
-}
+nav ul {
+  list-style-type: none;
+  display: block;
+  float: right;
+  margin-top: 62px; }
+
+nav ul li {
+  display: inline;
+  border-right: 1px solid black;
+  padding: 5px; }
 
 #menu-icon {
-	margin: 0;
-	display: hidden;
-	width: 40px;
-	height: 40px;
-	background: #000 url(/static/menu.png) center;
+  margin: 0;
+  display: hidden;
+  width: 40px;
+  height: 40px;
+  background: black url(/static/menu.png) center; }
 
-}
+#logo {
+  float: left;
+  white-space: nowrap; }
 
-
-#logo{
-	float: left;
-	white-space: nowrap;
-}
 #logo h1 {
-	font-weight: 100;
-	font-size: 50px;
-}
-#logo img{
-	width: 100px;
-	float: left;
-	margin-bottom: 10px
+  font-weight: 100;
+  font-size: 50px; }
 
-}
+#logo img {
+  width: 100px;
+  float: left;
+  margin-bottom: 10px; }
 
 #middle {
-	width: 100%;
-	clear: left;
-	float:left;
-}
+  width: 100%;
+  clear: left;
+  float: left;
+  padding-left: 65px;
+  padding-right: 65px; }
 
-#worm_background{
-	width: 75%;
-	height: 100%;
-	clear: left;
-	float:left;
-	background: #00d2ff; /* Old browsers */
-	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDBkMmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwZDc4OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-	background: -moz-linear-gradient(-45deg,  #00d2ff 0%, #00d789 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#00d2ff), color-stop(100%,#00d789)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(-45deg,  #00d2ff 0%,#00d789 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(-45deg,  #00d2ff 0%,#00d789 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(-45deg,  #00d2ff 0%,#00d789 100%); /* IE10+ */
-	background: linear-gradient(135deg,  #00d2ff 0%,#00d789 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d2ff', endColorstr='#00d789',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+#worm_background {
+  width: 75%;
+  height: 100%;
+  clear: left;
+  float: left;
+  background: #00d2ff;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDBkMmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwZDc4OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(-45deg, #00d2ff 0%, #00d789 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #00d2ff), color-stop(100%, #00d789));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #00d2ff 0%, #00d789 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, #00d2ff 0%, #00d789 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, #00d2ff 0%, #00d789 100%);
+  /* IE10+ */
+  background: linear-gradient(135deg, #00d2ff 0%, #00d789 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00d2ff', endColorstr='#00d789',GradientType=1 );
+  /* IE6-8 fallback on horizontal gradient */ }
 
-}
+#worm_background img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%; }
 
-#worm_background img{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width:40%;
-}
+#worm_background p#growing-days {
+  text-align: center;
+  font-size: 22px; }
 
-#worm_background p#growing-days{
-	text-align: center;
-	font-size: 22px;
-}
+#worm_background p#box-name {
+  text-align: center;
+  font-size: 28px; }
 
-#worm_background p#box-name{
-	text-align: center;
-	font-size: 28px;
-}
-
-#sidebar{
-	width: 25%;
-	height:600px;
-	float:right;
-}
+#sidebar {
+  width: 25%;
+  height: 600px;
+  float: right; }
 
 #statistic-caption p {
-	background-color: #5e5e5e;
-	font-weight: 200;
-	margin-top: -1px;
-	padding-top: 11px;
-	padding-bottom: 13px;
-	text-align: center;
-	font-size:13px;
-}
+  background-color: #5e5e5e;
+  font-weight: 200;
+  margin-top: -1px;
+  padding-top: 11px;
+  padding-bottom: 13px;
+  text-align: center;
+  font-size: 13px; }
 
 .stats {
-	text-align: center;
-}
+  text-align: center; }
 
-.stats h3{
-	background-color: #5e5e5e;
-	font-weight: 200;
-	margin-top: -1px;
-	padding-top: 11px;
-	padding-bottom: 13px;
-}
+.stats h3 {
+  background-color: #5e5e5e;
+  font-weight: 200;
+  margin-top: -1px;
+  padding-top: 11px;
+  padding-bottom: 13px; }
 
-.stats .line{
-	border-bottom: 10px solid #00ffa8;
-}
+.stats .line {
+  border-bottom: 10px solid #00ffa8; }
 
 #degree {
-	font-size: 66px;
-	font-weight: 100;
-	margin-top: -14px;
-	margin-bottom: 9px;
-	padding-bottom: 10px;
-}
+  font-size: 66px;
+  font-weight: 100;
+  margin-top: -14px;
+  margin-bottom: 9px;
+  padding-bottom: 10px; }
+
 #humidity {
-	font-size: 65px;
-	font-weight: 100;
-	margin-top: 10px;
-}
+  font-size: 65px;
+  font-weight: 100;
+  margin-top: 10px; }
 
 #caption-hum {
-	font-size: 32px;
-	margin-top: -71px;
-	padding-bottom: 22px;
-}
+  font-size: 32px;
+  margin-top: -71px;
+  padding-bottom: 22px; }
 
-#graph{
-	width: 100%;
-	height: 25%;
-	background-color:gray;
-}
+#graph {
+  width: 100%;
+  height: 25%;
+  background-color: gray; }
 
-#footer a{
-	color: white;
-	text-decoration: none;
-	font-size: 14px;
-	}
+#footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px; }
 
-#footer ul{
-	list-style-type:none;
-	display:block;
-	padding:0;
-	margin: 0;
+#footer ul {
+  list-style-type: none;
+  display: block;
+  padding: 0;
+  margin: 0; }
 
-}
-#footer ul li{
-	display:inline;
+#footer ul li {
+  display: inline; }
 
-}
-#footer{
-	float:left;
-	display:inline-block;
-}
-
-
+#footer {
+  float: left;
+  display: inline-block; }
 
 /*Tablet*/
-@media screen and (max-width:1024px) and (min-width: 641px) {
-	#logo img{ 
-		float:none;
-	}
-	#logo{
-		text-align:center;
-	}
-}
+@media screen and (max-width: 1024px) and (min-width: 641px) {
+  #logo img {
+    float: none; }
 
-
+  #logo {
+    text-align: center; } }
 /*Smartphone*/
-@media screen and (max-width:640px) {
-	#header {
-		position:fixed;
-		top:0;
-		left:0;
-		background-color: #000;
-		width:100%;
-		border-bottom: 2px solid #444;
-	}
+@media screen and (max-width: 640px) {
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    width: 100%;
+    border-bottom: 2px solid #444; }
 
-	#header h1 {
-		float: left;
-		font-size:1.5em;
-		margin-left: 1em;
-	}
+  #header h1 {
+    float: left;
+    font-size: 1.5em;
+    margin-left: 1em; }
 
-	#logo {
+  #logo-icon {
+    display: none; }
 
-	}
+  nav ul, nav:active ul, nav:hover ul {
+    display: none;
+    position: absolute;
+    padding: 0;
+    background: #000;
+    border: 1px solid #444;
+    right: 0;
+    top: 0;
+    width: 100%; }
 
-	#logo-icon {
-		display:none;
-	}
+  nav ul li {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    border: 1px solid #444; }
 
-	#middle { 
-		
-	}
+  nav li {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0; }
 
-	nav:active, nav:hover {
+  nav:active ul, nav:hover ul {
+    display: block; }
 
-	}
-	
-	nav ul, nav:active ul, nav:hover ul { 
-		display: none;
-		position: absolute;
-		padding: 0;
-		background: #000;
-		border: 1px solid #444;
-		right: 0;
-		top: 0;
-		width: 100%;
-	}
-	nav ul li {
-		display: inline-block;
-		text-align: center;
-		width: 100%;
-		padding: 10px 0;
-		margin: 0;
-		border: 1px solid #444;
-	}
+  #menu-icon {
+    float: right;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px; }
 
-	nav li {
-		text-align: center;
-		width: 100%;
-		padding: 10px 0;
-		margin: 0;
+  #worm-container {
+    width: 100%; }
 
-	}
+  #worm_background {
+    width: 100%; }
 
-	nav:active ul, nav:hover ul {
+  #sidebar {
+    width: 100%;
+    float: none; }
 
-		display: block;
+  .stats {
+    text-align: center; }
 
-	}
+  .stats h3 {
+    background-color: #5e5e5e;
+    font-weight: 200;
+    margin-top: -1px;
+    padding-top: 11px;
+    padding-bottom: 13px; }
 
-	#menu-icon {
-		float:right;
-		display:inline-block;
-		position:absolute;
-		top: 10px;
-		right: 10px;
-	}
-
-	#worm-container {
-		width:100%;
-	}
-
-	#worm_background {
-		width: 100%;
-	}
-
-	#sidebar {
-		width:100%;
-		float:none;
-	}
-
-	.stats {
-		text-align: center;	
-	}
-
-	.stats h3{
-		background-color: #5e5e5e;
-		font-weight: 200;
-		margin-top: -1px;
-		padding-top: 11px;
-		padding-bottom: 13px;
-	}
-
-	.stats p{
-		
-	}
-
-	.stats .line{
-		border-bottom: 10px solid #00ffa8;
-	}
-
-}
+  .stats .line {
+    border-bottom: 10px solid #00ffa8; } }
