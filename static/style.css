@@ -45,6 +45,12 @@ body{
 
 }
 
+#middle {
+	width: 100%;
+	clear: left;
+	float:left;
+}
+
 #worm_background{
 	width: 75%;
 	height: 100%;
