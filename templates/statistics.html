@@ -1,6 +1,16 @@
 {% extends "index.html" %}
 {% block title %}Statistics - {% endblock %}
 {% block content %}
+<style>
+	.rickshaw_graph .x_tick {
+		position: absolute;	
+		bottom: 0;
+		width: 0;
+		border-left: 1px dotted rgba(0,0,0,.2);
+		pointer-events: none;
+		z-index:2;
+	}
+</style>
 <div class="title2">
     <h1>Some rad stats of our worms</h1>
 </div>
@@ -8,5 +18,28 @@
 <div class="secondary">
     <p>Welcome to 'Hello, worm!'.</p>
 </div>
+<div class="worm_background">
+	<div class="worm_container">
+		<div id="graph" style=" display:static">
+		</div>
+	</div>
+</div>
+<script src="/static/graph/vendor/d3.min.js"></script>
+	<script src="/static/graph/vendor/d3.layout.min.js"></script>
+	<script src="/static/graph/rickshaw.min.js"></script>
+	<script>
+		var data = {{datastr}};
 
+		var graph = new Rickshaw.Graph( {
+	        element: document.querySelector("#graph"),
+	        width: 720/2,
+	        height: 600/2,
+	        series: [ {
+                color: '#00d2ff',
+                data: data
+	        } ]
+		} );
+
+		graph.render();
+	</script>
 {% endblock %}
