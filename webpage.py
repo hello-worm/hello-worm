@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from jinja2 import Environment, PackageLoader
-import sqlite3
+import sqlite3, os, datetime
 
 app = Flask(__name__)
 
@@ -27,9 +27,12 @@ def serve_home():
 
 @app.route('/photos/')
 def serve_photos():
-
+    photopath = "./static/images/"
+    allfiles = [photopath+f for f in os.listdir(photopath)]
+    latest_file = max(allfiles, key=os.path.getmtime)
+    datestr = datetime.datetime.fromtimestamp(os.path.getmtime(latest_file)).strftime("%Y-%m-%d %H:%M:%S")
     return render_template('photos.html', 
-        imagefilename="/static/images/wormpic2_medium.jpg")
+        imagefilename=latest_file.lstrip('.'), datestr=datestr)
 
 @app.route('/alerts/')
 def serve_alerts():
