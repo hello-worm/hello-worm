@@ -7,29 +7,30 @@ body{
 	padding-right: 65px;
 	}
 
-	#navbar a{
-		color: white;
+nav a{
+	color: white;
 	text-decoration: none;
 	font-size: 21px;
 	margin-left: 30px;
-	}
+}
 
-#navbar{
+nav {
 	float:right;
 	display:inline-block;
 }
-#navbar ul{
+nav ul{
 	list-style-type:none;
 	display:block;
 	float:right;
 	margin-top: 62px;
 
 }
-#navbar ul li{
+nav ul li{
 	display:inline;
 	border-right:1px solid black;
 	padding:5px;
 }
+
 #logo{
 	float: left;
 	white-space: nowrap;
@@ -173,7 +174,6 @@ body{
 
 
 /*Tablet*/
-
 @media screen and (max-width:1024px) and (min-width: 641px) {
 	#logo img{ 
 		float:none;
@@ -184,15 +184,14 @@ body{
 }
 
 
-/*smartphone*/
-/*Tablet*/
-
+/*Smartphone*/
 @media screen and (max-width:640px) {
-	#top {
+	#header {
 		position:fixed;
 		top:0;
 		left:0;
 		background-color: black;
+		width:100%;
 	}
 	#logo {
 		width:100%;
@@ -200,7 +199,38 @@ body{
 	#logo-icon {
 		display:none;
 	}
+	
 	#middle { 
-		width: 25%;
+		
+	}
+
+	
+	nav ul, nav:active ul { 
+
+		display: none;
+		position: absolute;
+		padding: 20px;
+		background: #fff;
+		border: 5px solid #444;
+		right: 20px;
+		top: 60px;
+		width: 50%;
+		border-radius: 4px 0 4px 4px;
+
+	}
+
+	nav li {
+
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+
+	}
+
+	nav:hover ul {
+
+		display: block;
+
 	}
 }
