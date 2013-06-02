@@ -44,6 +44,7 @@
 						<p class="line" id="caption-hum">humidity level</p>
 				</div>
 			<!--Graph goes here-->
+			
 				<div id="graph">
 
 				</div>
@@ -64,7 +65,26 @@
 				<li> <a href="https://google.com">Settings</a></li> 
 			</ul>
 		</div>
-		
+		<script src="/static/graph/vendor/d3.min.js"></script>
+			<script src="/static/graph/vendor/d3.layout.min.js"></script>
+			<script src="/static/graph/rickshaw.min.js"></script>
+			<script>
+
+			var data = [ { x: 0, y: 40 }, { x: 1, y: 49 }, { x: 2, y: 17 }, { x: 3, y: 42 } ];
+
+			var graph = new Rickshaw.Graph( {
+				element: document.querySelector("#graph"),
+				width: 580,
+				height: 250,
+				series: [ {
+					color: 'steelblue',
+					data: data
+				} ]
+			} );
+
+			graph.render();
+
+			</script>
 	</body>
 
 </html>
