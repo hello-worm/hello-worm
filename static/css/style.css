@@ -182,7 +182,7 @@ nav ul li {
   position: relative; }
 
 /*Smartphone*/
-@media screen and (max-width: 680px) and (-webkit-min-device-pixel-ratio: 1) {
+@media screen and (max-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
   html {
     font-size: 32px; }
 
@@ -284,14 +284,6 @@ nav ul li {
     display: none; }
 
   #graph {
-    display: none; }
-
-  #hum-img {
-    width: 100%;
-    display: none; }
-
-  #temp-img {
-    width: 100%;
     display: none; }
 
   #statistic-caption img {
