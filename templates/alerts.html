@@ -1,6 +1,20 @@
 {% extends "index.html" %}
 {% block title %}Alerts - {% endblock %}
 {% block content %}
-    <h1>Happy worms mean happy people.</h1>
-    <p>No new alerts.</p>
+	
+	<div class="title2">
+		<h1>Alerts</h1>
+	</div>
+
+	<div class="secondary">
+		{% for x in datastr %}
+	 	<div style="background-color:{{ color }}">
+	 		
+	 		01.16.2013
+	 		_Humidity rose 8%
+	 		<h3>Good moisture</h3>
+		</div>
+	</div>
+	{% endfor %}
+	
 {% endblock %}

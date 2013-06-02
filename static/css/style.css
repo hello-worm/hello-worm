@@ -145,10 +145,12 @@ nav ul li {
   background-color: gray; }
 
 #footer {
+  clear: both;
   padding: 0 5%;
   font-size: 14px;
   color: white;
-  float: left; }
+  float: left;
+  display: inline-block; }
 
 /*Tablet*/
 @media screen and (max-width: 1024px) and (min-width: 641px) {
@@ -169,8 +171,7 @@ nav ul li {
 
   #header h1 {
     float: left;
-    font-size: 1.5em;
-    margin-left: 1em; }
+    font-size: 1.5em; }
 
   #logo-icon {
     display: none; }
@@ -259,4 +260,24 @@ nav ul li {
     border-bottom: 10px solid #00ffa8; }
 
   #footer {
+    clear: both;
     display: none; } }
+.secondary {
+  color: white;
+  padding: 0 5%;
+  display: block;
+  overflow: show; }
+
+.title2 {
+  width: 100%;
+  background-color: #5e5e5e; }
+  .title2 h1 {
+    padding: 0 5%;
+    margin: 0; }
+
+.settings {
+  padding-right: 1em;
+  width: 2em;
+  display: block;
+  float: left;
+  vertical-align: middle; }
