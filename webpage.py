@@ -28,7 +28,8 @@ def serve_home():
 @app.route('/photos/')
 def serve_photos():
 
-    return render_template('photos.html')
+    return render_template('photos.html', 
+        imagefilename="/static/images/wormpic2_medium.jpg")
 
 @app.route('/alerts/')
 def serve_alerts():
