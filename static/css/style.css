@@ -281,6 +281,12 @@ nav ul li {
   #graph {
     display: none; }
 
+  #hum-img {
+    width: 100%; }
+
+  #temp-img {
+    width: 100%; }
+
   #statistic-caption img {
     display: none; }
   #statistic-caption p {
