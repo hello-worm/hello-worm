@@ -16,6 +16,8 @@ and (-webkit-min-device-pixel-ratio: 1){
 	html {
 		font-size: 32px;
 	}
+
+
 	#header {
 		position:fixed;
 		top:0;
@@ -173,6 +175,7 @@ and (-webkit-min-device-pixel-ratio: 1){
 	#footer {
 		clear:both;
 		border-top: 2px solid #444;
+		font-size: 1em;
 	}
 
 
