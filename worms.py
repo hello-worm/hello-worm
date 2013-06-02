@@ -4,12 +4,16 @@ import time
 from datetime import datetime
 
 SERIAL_PORT = '621'
+TEMP_THRESH = 90.
+HUMIDITY_THRESH = 80.
 
 def setupDB():
     conn = sqlite3.connect('worms.db')
     c = conn.cursor()
     c.execute('''create table worms (id int, time text, temp float, 
-        humidity float, motion integer)''')
+        humidity float, motion integer, image text)''')
+    c.execute('''create table alerts (id int, time text, alerttext text,
+        active integer''')
     conn.commit()
     conn.close()
 
@@ -40,25 +44,57 @@ def readArduino():
     humidity = float(humidity)
     # add other sensors here
     motion = 0
+    image = ''
 
-    return [timestamp, temp, humidity, motion]
+    return [timestamp, temp, humidity, motion, image]
 
 def insertintoDB(data):
     conn = sqlite3.connect('worms.db')
     c = conn.cursor()
     # get the last entry id and increment it
-    c.execute("select * from worms order by id desc limit 1")
-    olddata = c.fetchone()
+    c.execute("select max(id) from worms")
     try:
-    	index = int(olddata[0]) + 1
+        index = c.fetchone()[0] + 1
     except Exception, e:
-    	index = 1
+        index = 1
     # this is the actual data
-    [timestamp, temp, humidity, motion] = data
-    c.execute("insert into worms values (?,?,?,?,?)",
-        (index, timestamp, temp, humidity, motion))
+    [timestamp, temp, humidity, motion, image] = data
+    c.execute("insert into worms values (?,?,?,?,?,?)",
+        (index, timestamp, temp, humidity, motion, image))
     conn.commit()
     conn.close()
+
+def checkforAlerts(data):
+    [timestamp, temp, humidity, motion, image] = data
+
+    conn = sqlite3.connect('worms.db')
+    c = conn.cursor()
+    c.execute("select max(id) from alerts")
+    try:
+        index = c.fetchone()[0] + 1
+    except Exception, e:
+        index = 1
+
+    active = 1
+    if temp > TEMP_THRESH:
+        alerttext = "Check temperature"
+        sendalert(alerttext)
+        c.execute("insert into alerts values (?,?,?,?)",
+            (index, timestamp, alerttext, active))
+        conn.commit()
+        conn.close() 
+    if humidity < HUMIDITY_THRESH:
+        alerttext = "Check humidity"
+        sendalert(alerttext)
+        c.execute("insert into alerts values (?,?,?,?)",
+            (index, timestamp, alerttext, active))
+        conn.commit()
+        conn.close()          
+
+def sendalert(alerttext):
+    pass
+
+
 
 if __name__ == "__main__":
     while(1):
