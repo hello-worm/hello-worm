@@ -84,11 +84,13 @@ and (-webkit-min-device-pixel-ratio: 1){
 	}
 
 	#menu-icon {
+		width:80px;
+		height:80px;
 		float:right;
 		display:inline-block;
 		position:fixed;
-		top: 10px;
-		right: 10px;
+		top: 20px;
+		right: 20px;
 	}
 
 	#worm-container {
