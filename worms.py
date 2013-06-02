@@ -2,7 +2,7 @@ import sqlite3
 import serial
 import time
 from datetime import datetime
-
+from subprocess import Popen
 SERIAL_PORT = '621'
 TEMP_THRESH = 90.
 HUMIDITY_THRESH = 80.
@@ -92,6 +92,7 @@ def checkforAlerts(data):
         conn.close()          
 
 def sendalert(alerttext):
+    Popen(["./send_sms.sh", alerttext])
     pass
 
 
