@@ -199,11 +199,12 @@ nav ul li{
 	#logo-icon {
 		display:none;
 	}
-	
+
 	#middle { 
 		
 	}
 
+	
 	
 	nav ul, nav:active ul { 
 
@@ -233,4 +234,5 @@ nav ul li{
 		display: block;
 
 	}
+
 }
