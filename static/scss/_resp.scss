@@ -129,8 +129,6 @@
 		padding: 0;
 	}
 	#caption-hum {
-		// font-size: 1em;
-		// float:left;
 		display:none;
 	}
 	#graph {
@@ -144,6 +142,6 @@
 
 	#footer {
 		clear:both;
-		// display:none;
+		border-top: 2px solid #444;
 	}
 }

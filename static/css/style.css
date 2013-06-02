@@ -259,7 +259,8 @@ nav ul li {
     border-bottom: 10px solid #00ffa8; }
 
   #footer {
-    clear: both; } }
+    clear: both;
+    border-top: 2px solid #444; } }
 .secondary {
   color: white;
   padding: 0 5%;
