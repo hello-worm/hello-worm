@@ -50,6 +50,11 @@ def serve_settings():
 
     return render_template('settings.html')
 
+@app.route('/mobilegraph/')
+def serve_settings():
+
+    return render_template('mobilegraph.html')
+
 
 if __name__ == '__main__':
     app.run()
