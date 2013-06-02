@@ -28,22 +28,28 @@ def serve_home():
 @app.route('/photos/')
 def serve_photos():
 
-    return render_template('photos.html')
+    return render_template('photos.html', 
+        imagefilename="/static/images/wormpic2_medium.jpg")
 
 @app.route('/alerts/')
 def serve_alerts():
 
-    return 'alerts'
+    return render_template('alerts.html')
+
+@app.route('/statistics/')
+def serve_alerts():
+
+    return render_template('statistics.html')
 
 @app.route('/about/')
 def serve_about():
 
-    return 'about'
+    return render_template('about.html')
 
 @app.route('/settings/')
 def serve_settings():
 
-    return 'settings'
+    return render_template('settings.html')
 
 
 if __name__ == '__main__':
