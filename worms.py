@@ -3,6 +3,8 @@ import serial
 import time
 from datetime import datetime
 
+SERIAL_PORT = '621'
+
 def setupDB():
     conn = sqlite3.connect('worms.db')
     c = conn.cursor()
@@ -12,7 +14,7 @@ def setupDB():
     conn.close()
 
 def readArduino():
-    ser = serial.Serial(port='/dev/tty.usbmodemfd121', baudrate=9600)
+    ser = serial.Serial(port='/dev/tty.usbmodem' + SERIAL_PORT, baudrate=9600)
     print "arduino opened"
     attempts = 0
     while(True):
