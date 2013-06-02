@@ -84,14 +84,12 @@ nav ul li{
 	background: -ms-linear-gradient(-45deg,  #00d2ff 0%,#00d789 100%); /* IE10+ */
 	background: linear-gradient(135deg,  #00d2ff 0%,#00d789 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d2ff', endColorstr='#00d789',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
-
-}
-
-#worm_background img{
+	img{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width:40%;
+	}
 }
 
 #worm_background p#growing-days{
