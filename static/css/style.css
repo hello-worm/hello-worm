@@ -100,12 +100,15 @@ nav ul li {
   float: left; }
 
 #statistic-caption p {
+  margin: 0;
   background-color: #5e5e5e;
   font-weight: 200;
-  padding-top: 11px;
-  padding-bottom: 13px;
+  padding: 3px;
   text-align: center;
   font-size: 13px; }
+#statistic-caption img {
+  max-width: 100%;
+  margin: 0; }
 
 .stats {
   text-align: center; }
@@ -118,7 +121,8 @@ nav ul li {
   padding-bottom: 13px; }
 
 .stats .line {
-  border-bottom: 10px solid #00ffa8; }
+  border-bottom: 10px solid #00ffa8;
+  margin-bottom: 0; }
 
 #degree {
   font-size: 66px;
@@ -136,6 +140,8 @@ nav ul li {
   font-size: 32px;
   margin-top: -71px;
   padding-bottom: 22px; }
+  #caption-hum .line {
+    margin: 0; }
 
 #graph {
   width: 100%;
@@ -272,9 +278,12 @@ nav ul li {
   #graph {
     display: none; }
 
+  #statistic-caption img {
+    display: none; }
   #statistic-caption p {
     font-size: 0.8em;
-    border-bottom: 10px solid #00ffa8; }
+    border-bottom: 10px solid #00ffa8;
+    padding: 1em; }
 
   #footer {
     clear: both;
@@ -287,7 +296,8 @@ nav ul li {
 
 .title2 {
   width: 100%;
-  background-color: #5e5e5e; }
+  background-color: #5e5e5e;
+  padding: 1%; }
   .title2 h1 {
     padding: 0 5%;
     margin: 0; }

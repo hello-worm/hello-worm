@@ -143,9 +143,13 @@
 		display:none;
 	}
 
-	#statistic-caption p {
-	font-size:0.8em;
-	border-bottom: 10px solid #00ffa8;
+	#statistic-caption {
+		img {display:none;}
+		p {
+			font-size:0.8em;
+			border-bottom: 10px solid #00ffa8;
+			padding: 1em;
+		}
 	}
 
 	#footer {
