@@ -46,7 +46,7 @@ def get_alerts():
     conn.commit()
     conn.close()
 
-    return str(alerts_list)    
+    return alerts_list
 
 
 @app.route('/')
@@ -68,8 +68,8 @@ def serve_photos():
 
 @app.route('/alerts/')
 def serve_alerts():
-
-    return render_template('alerts.html')
+    alerts_list = get_alerts()
+    return render_template('alerts.html', alerts_list=alerts_list)
 
 @app.route('/statistics/')
 def serve_statistics():
