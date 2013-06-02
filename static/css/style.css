@@ -98,7 +98,6 @@ nav ul li {
 
 #sidebar {
   width: 20%;
-  height: 600px;
   float: left; }
 
 #statistic-caption p {
@@ -260,8 +259,7 @@ nav ul li {
     border-bottom: 10px solid #00ffa8; }
 
   #footer {
-    clear: both;
-    display: none; } }
+    clear: both; } }
 .secondary {
   color: white;
   padding: 0 5%;
