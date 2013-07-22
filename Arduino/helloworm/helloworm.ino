@@ -1,7 +1,7 @@
 #include <Time.h>
 #include <SD.h>
 #include <SHT1x.h>
-#define dataPin 2
+#define dataPin 4
 #define clockPin 3
 SHT1x sht1x(dataPin, clockPin);
 int led = 5;  // status led
