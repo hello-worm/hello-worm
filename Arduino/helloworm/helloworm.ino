@@ -3,8 +3,10 @@
 #include <SHT1x.h>
 #define dataPin 4
 #define clockPin 3
+#define MQ4pin 0
+#define MQ8pin 1
 SHT1x sht1x(dataPin, clockPin);
-int led = 5;  // status led
+int led = 5;  // status led pin
 File myFile;  // data file on the SD card
 String timestamp;  // timestamp for each data line
 
@@ -22,7 +24,7 @@ void setup() {
 
 void loop(){
   // prep SD card file
-  myFile = SD.open("test.txt", FILE_WRITE);
+  myFile = SD.open("test2.txt", FILE_WRITE);
   if (!myFile) {
     // if the file didn't open, print an error:
     Serial.println("error opening test.txt");
@@ -56,12 +58,26 @@ void loop(){
     myFile.print(tempF);
     myFile.print(",");
     myFile.print(humidity);
-    myFile.print("\n");
   }
   Serial.print(tempF);
   Serial.print(",");
   Serial.print(humidity);
-  Serial.print("\n");
+  
+  // read gas sensors
+  int valMQ4, valMQ8;
+  valMQ4 = analogRead(MQ4pin);
+  valMQ8 = analogRead(MQ8pin);
+  if (myFile){
+    myFile.print(",");
+    myFile.print(valMQ4);
+    myFile.print(",");
+    myFile.print(valMQ8);
+    myFile.print("\n");
+  }
+  Serial.print(',');
+  Serial.print(valMQ4);//Print the value to serial port
+  Serial.print(',');
+  Serial.println(valMQ8);
   
   myFile.close();
   
