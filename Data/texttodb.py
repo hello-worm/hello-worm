@@ -3,7 +3,7 @@ import serial
 import time, os
 from datetime import datetime
 DBFILE = 'wormdata.db'
-DATAFILE = 'TEST2.TXT'
+DATAFILE = 'week3/TEST3.TXT'
 N=5
 
 def setupDB(n=3):

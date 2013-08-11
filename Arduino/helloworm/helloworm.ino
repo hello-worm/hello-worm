@@ -24,7 +24,7 @@ void setup() {
 
 void loop(){
   // prep SD card file
-  myFile = SD.open("test2.txt", FILE_WRITE);
+  myFile = SD.open("test4.txt", FILE_WRITE);
   if (!myFile) {
     // if the file didn't open, print an error:
     Serial.println("error opening test.txt");
@@ -84,7 +84,7 @@ void loop(){
   // blink the LED again
   // blink the LED so we know it's alive
   analogWrite(led, 0); 
-  delay(1000);  
+  delay(5000);  
   analogWrite(led, 5);  
 }
 

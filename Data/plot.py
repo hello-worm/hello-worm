@@ -5,8 +5,8 @@ import matplotlib.pyplot as pl
 import matplotlib.dates as mdates
 
 DBFILE = 'wormdata.db'
-GRAPHFILE = 'wk_data.png'
-GRAPHFILEWK = 'wk_bywkday.png'
+GRAPHFILE = 'wk3_data.png'
+GRAPHFILEWK = 'wk3_bywkday.png'
 
 
 def getndat(all=False):
@@ -64,7 +64,8 @@ def plotdata(date, rawdata, cols='0123'):
         ax4.set_ylabel(vardict[cols[3]])
         axes.append(ax4)
 
-    ax.set_title('Hello Worm data')
+    ax.set_title('Hello Worm data '+ datetime.strftime(date[0], "%m/%d") \
+        + "-" + datetime.strftime(date[-1], "%m/%d"))
     axes[-1].set_xlabel('Time')
     for axis in axes:
         axis.xaxis.set_major_locator(mdates.DayLocator())
@@ -75,7 +76,9 @@ def plotdata(date, rawdata, cols='0123'):
     pl.savefig(GRAPHFILE)
     pl.show()
 
-def weekdays(date, temp, hum):
+def weekdays(date, rawdata):
+    temp = rawdata[:,0]
+    hum = rawdata[:,1]
     tempbywkday = [[],[],[],[],[]]
     datebywkday = [[],[],[],[],[]]
     for d, t, h in zip(date, temp, hum):
@@ -94,7 +97,7 @@ def weekdays(date, temp, hum):
     #ax.xaxis.set_minor_locator(mdates.HourLocator(interval=4))
     ax.set_xlabel('Time [hr]')
     ax.set_ylabel('Temperature [F]')
-    ax.set_title('Helloworm data week 1 by weekday')
+    ax.set_title('Helloworm data by weekday ')
     ax.legend(['Mon', 'Tues', 'Wed', 'Thu', 'Fri'], prop={'size':10})
     fig.autofmt_xdate()
     pl.savefig(GRAPHFILEWK)
@@ -103,6 +106,6 @@ def weekdays(date, temp, hum):
 if __name__ == "__main__":
     data = getndat(True)
     date, rawdata = parsedata(data) 
-    plotdata(date, np.array(rawdata))
-    #weekdays(date, temp, hum)
+    #plotdata(date, np.array(rawdata))
+    weekdays(date, np.array(rawdata))
 
