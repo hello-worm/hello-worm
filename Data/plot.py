@@ -5,8 +5,8 @@ import matplotlib.pyplot as pl
 import matplotlib.dates as mdates
 
 DBFILE = 'wormdata.db'
-GRAPHFILE = 'wk3_data.png'
-GRAPHFILEWK = 'wk3_bywkday.png'
+GRAPHFILE = 'wk45_data.png'
+GRAPHFILEWK = 'wk45_bywkday.png'
 
 
 def getndat(all=False):
@@ -106,6 +106,6 @@ def weekdays(date, rawdata):
 if __name__ == "__main__":
     data = getndat(True)
     date, rawdata = parsedata(data) 
-    #plotdata(date, np.array(rawdata))
-    weekdays(date, np.array(rawdata))
+    plotdata(date, np.array(rawdata))
+    #weekdays(date, np.array(rawdata))
 
