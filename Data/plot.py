@@ -5,17 +5,17 @@ import matplotlib.pyplot as pl
 import matplotlib.dates as mdates
 
 DBFILE = 'wormdata.db'
-GRAPHFILE = 'wk45_data.png'
-GRAPHFILEWK = 'wk45_bywkday.png'
+GRAPHFILE = 'wk67_data.png'
+GRAPHFILEWK = 'wk67_bywkday.png'
 
 
-def getndat(all=False):
+def getndat(numEntries=None):
     conn = sqlite3.connect(DBFILE)
     c = conn.cursor()
-    if all:
+    if numEntries==None:
         sql = 'select * from worm'# where rowid%100=0'
     else:
-        sql = 'select * from worm order by rowid desc limit 288'
+        sql = 'select * from worm order by rowid desc limit %d' %numEntries
     c.execute(sql)
     data = c.fetchall()
     c.close()
@@ -104,7 +104,7 @@ def weekdays(date, rawdata):
     pl.show()
 
 if __name__ == "__main__":
-    data = getndat(True)
+    data = getndat()
     date, rawdata = parsedata(data) 
     plotdata(date, np.array(rawdata))
     #weekdays(date, np.array(rawdata))
