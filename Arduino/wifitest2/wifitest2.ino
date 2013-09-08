@@ -1,7 +1,7 @@
 #include <WiFi.h>
 
-char ssid[] = "fp143133c";     //  your network SSID (name) 
-char pass[] = "lowellhouse";    // your network password
+char ssid[] = "SSID HERE";     //  your network SSID (name) 
+char pass[] = "PASS HERE";    // your network password
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
 
 void setup() {
